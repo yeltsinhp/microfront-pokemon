@@ -9,7 +9,7 @@ export default defineConfig({
       name: "pokemonMicrofront",
       filename: "remoteEntry.js",
       exposes: {
-        "./PokemonDetail": "./src/components/PokemonDetail.tsx", // 📌 Corregimos la ruta
+        "./PokemonDetail": "./src/components/PokemonDetail.tsx",
       },
       shared: ["react", "react-dom"],
     }),
