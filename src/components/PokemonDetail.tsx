@@ -22,20 +22,16 @@ const PokemonDetail = () => {
     };
 
     fetchData();
-    savePokemonToHistory(pokemon); // 📌 Guardamos el Pokémon en el historial
+    savePokemonToHistory(pokemon); 
   }, [pokemon]);
 
-  // 📌 Función para guardar el Pokémon en el historial y eliminar duplicados
   const savePokemonToHistory = (pokemonName: string) => {
     let history = JSON.parse(localStorage.getItem("pokemonHistory") || "[]");
 
-    // 🔹 Eliminamos el Pokémon si ya está en la lista
     history = history.filter((name: string) => name !== pokemonName);
 
-    // 🔹 Agregamos el nuevo Pokémon al inicio de la lista
     history.unshift(pokemonName);
 
-    // 🔹 Guardamos la lista actualizada en `localStorage`
     localStorage.setItem("pokemonHistory", JSON.stringify(history));
   };
 
